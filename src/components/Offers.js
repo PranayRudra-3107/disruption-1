@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Box } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
-
+import MyRadioButtonGrid from "./MyRadioButtonGrid";
 export default function Offers() {
   const [items] = useState([])
 
@@ -16,6 +16,7 @@ const columns = [
 
   return (
     <div>
+    <MyRadioButtonGrid/>
     <h3>Latest Offers</h3>
       
     <Box
@@ -35,6 +36,7 @@ const columns = [
       />
       </div>
     </Box>
+    
     </div>
   )
 }

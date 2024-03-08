@@ -1,37 +1,42 @@
-import React from 'react';
-import {RadioGroup} from '@material-ui/core';
+import * as React from 'react';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import Grid from '@mui/material/Grid';
 
-class MyRadioButtonGrid extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedValue: 'option1',
-    };
-  }
-
-  handleChange = (value) => {
-    this.setState({ selectedValue: value });
-  }
-
-  render() {
-    return (
-      <RadioGroup name="radioGroup" selectedValue={this.state.selectedValue} onChange={this.handleChange}>
-        {Radio => (
-          <div>
-            <label>
-              <Radio value="option1" /> Option 1
-            </label>
-            <label>
-              <Radio value="option2" /> Option 2
-            </label>
-            <label>
-              <Radio value="option3" /> Option 3
-            </label>
-          </div>
-        )}
-      </RadioGroup>
-    );
-  }
+export default function RadioButtonsGroup() {
+  return (
+    <Grid container direction="row">
+      <Grid item xs={6}>
+        <FormControl>
+          <FormLabel>Completeness Score</FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue="general"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel value="general" control={<Radio />} label="General" />
+            <FormControlLabel value="npi_data" control={<Radio />} label="NPI Data" />
+            <FormControlLabel value="recommended_data" control={<Radio />} label="Recommended Data" />
+          </RadioGroup>
+        </FormControl>
+      </Grid>
+      <Grid item xs={6}>
+        <FormControl>
+          <FormLabel>Accuracy Score</FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue="general"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel value="city/state_match" control={<Radio />} label="City/State Match" />
+            <FormControlLabel value="zip_code_check" control={<Radio />} label="Zip Code Check" />
+            <FormControlLabel value="npi_validation" control={<Radio />} label="NPI Validation" />
+          </RadioGroup>
+        </FormControl>
+      </Grid>
+    </Grid>
+  );
 }
-
-export default MyRadioButtonGrid;
