@@ -28,7 +28,7 @@ const columns = [
         height: '100vh',
       }}
     >
-      <div style={{ height: '100%', width: '100%' }}>
+      <div style={{ height: '100%', width: '80%' }}>
       <DataGrid
         rows={items}
         columns={columns}
