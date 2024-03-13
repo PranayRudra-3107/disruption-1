@@ -113,7 +113,7 @@ const FileUpload = () => {
 
   const handleLeaveDialog = () => {
     setOpenDialog(false);
-    window.location.href = "https://www.zelis.com";
+    window.location.href = "http://10.135.67.8:3030/#!/";
   };
 
   return (
